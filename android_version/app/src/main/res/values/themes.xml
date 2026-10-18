@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Thème Application Principal -->
+    <style name="Theme.EClavier" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/brand_green</item>
+        <item name="colorPrimaryVariant">@color/brand_green_dark</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorSecondary">@color/brand_orange</item>
+        <item name="colorSecondaryVariant">@color/brand_orange</item>
+        <item name="colorOnSecondary">@color/white</item>
+        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+    </style>
+
+    <!-- Style par défaut d'une touche AZERTY -->
+    <style name="KeyStyle">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_marginStart">2dp</item>
+        <item name="android:layout_marginEnd">2dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">19sp</item>
+        <item name="android:background">@drawable/bg_key_light</item>
+        <item name="android:textColor">@color/text_primary_light</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+    </style>
+</resources>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ripple xmlns:android="http://schemas.android.com/apk/res/android"
+    android:color="#40FFFFFF">
+    <item>
+        <layer-list>
+            <!-- Ombre inférieure sombre -->
+            <item android:top="2dp">
+                <shape android:shape="rectangle">
+                    <corners android:radius="6dp" />
+                    <solid android:color="#3F4F3C" />
+                </shape>
+            </item>
+            <!-- Corps de la touche utilisateur #5C7057 -->
+            <item android:bottom="2dp">
+                <shape android:shape="rectangle">
+                    <corners android:radius="6dp" />
+                    <solid android:color="@color/key_bg_dark" />
+                    <stroke android:width="0.5dp" android:color="@color/key_border_dark" />
+                </shape>
+            </item>
+        </layer-list>
+    </item>
+</ripple>

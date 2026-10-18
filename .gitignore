@@ -1,0 +1,45 @@
+# ==============================================================================
+# .gitignore pour E_CLAVIER (Projet Multi-Target : MATLAB PC & Android NDK)
+# ==============================================================================
+
+# --- MATLAB & MATLAB Coder ---
+*.asv
+*.m~
+*.mat
+*.mldatx
+*.dmr
+*.rsp
+*.tmw
+*.log
+matlab_version/output_dir/
+matlab_version/ClavierMultilingueApp/
+matlab_version/lib_*.prj
+codegen_c_engine/.idea/
+
+# --- Android Studio & Gradle ---
+.gradle/
+build/
+**/build/
+local.properties
+.cxx/
+**/.cxx/
+captures/
+*.apk.sha1
+
+# --- IDEs & Éditeurs ---
+.idea/
+**/.idea/
+*.iml
+**/*.iml
+.vscode/
+*.swp
+*.bak
+
+# --- Système d'exploitation ---
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# --- Notes & Brouillons Personnels ---
+*.canvas
+*.base

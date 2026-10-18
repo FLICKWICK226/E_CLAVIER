@@ -1,59 +1,95 @@
-# E_CLAVIER — Clavier Virtuel Multilingue (Mooré, Dioula, Fulfuldé)
+# E_CLAVIER — Clavier Système & Virtuel Multilingue (Mooré, Dioula, Fulfuldé)
 
-**E_CLAVIER** est une application ouverte et gratuite de saisie de texte multilingue permettant d'écrire intégralement dans trois langues nationales majeures du Burkina Faso (**Mooré**, **Dioula**, **Fulfuldé**) en respectant les normes de l'**Alphabet National Burkinabè (ANB)** et le standard Unicode.
+**E_CLAVIER** est une solution complète, ouverte et gratuite de saisie de texte multilingue permettant d'écrire rigoureusement dans trois langues nationales majeures du Burkina Faso (**Mooré**, **Dioula**, **Fulfuldé**) en respectant les normes de l'**Alphabet National Burkinabè (ANB)** et le standard Unicode (ISO/IEC 10646).
 
-Ce projet est une initiative académique et citoyenne portée par un étudiant de l'**École Polytechnique de Ouagadougou (EPO)**.
+Ce projet est une initiative citoyenne et académique portée par un étudiant de l'**École Polytechnique de Ouagadougou (EPO)**.
 
 ---
 
-## Fonctionnalités Principales
+##  Deux Cibles Opérationnelles
 
-* **Support Natif de l'ANB (Mooré, Dioula, Fulfuldé) :**
-  * **Mooré :** `ɛ`, `ɩ`, `ʋ`, `ʼ` (+ majuscules `Ɛ`, `Ɩ`, `Ʋ`)
+Le projet livre deux applications concrètes et autonomes vous les trouverez dans le dossier /releases  :
+
+1. **💻 Application PC Windows Autonome (`ECLAVIER_ANB.exe`) :**  
+   Conçue avec MATLAB App Designer (`matlab_version/ClavierMultilingueApp.m`) et compilée avec le *MATLAB Application Compiler*. Permet la saisie rapide via des raccourcis industriels **`AltGr`** et l'export direct vers Word, Excel, les réseaux sociaux et les navigateurs.
+2. **📱 Clavier Système Android v2.0 (`ECLAVIER_ANB.apk`) :**  
+   Véritable service d'entrée système (**`InputMethodService`**) utilisable dans toutes les applications (WhatsApp, SMS, Facebook, TikTok, Word, navigateurs) :
+   - **Application Compagnon à 3 Menus (Material 3) :**
+     - **Accueil & Bac à Sable :** Statut d'activation système en temps réel et zone de saisie interactive pour s'entraîner.
+     - **Paramètres :** Thème clair (**touches vert pastel `#D1EDD3`**), thème sombre (**touches vert sauge `#5C7057`**) ou automatique (suit Android), retours haptiques (vibrations) et sonores.
+     - **À Propos & Soutien :** Initiative étudiante EPO, liens officiels GitHub / [CONTRIBUTING.md](CONTRIBUTING.md) et bouton pour copier le contact Mobile Money.
+   - **Clavier Système Complet :** Toolbar supérieure ANB (switch dynamique de langue, 4 tons combinants), rangée ANB dédiée à 5 touches et pavé complet AZERTY (A-Z) avec raccourcis en appui long.
+
+---
+
+##  Fonctionnalités Principales
+
+* **Support Intégral de l'ANB (Mooré, Dioula, Fulfuldé) :**
+  * **Mooré :** `ɛ`, `ɩ`, `ʋ`, `ʼ` (+ majuscules `Ɛ`, `Ɩ`, `Ʋ`, `ʼ`)
   * **Dioula :** `ɛ`, `ɔ`, `ɲ`, `ŋ` (+ majuscules `Ɛ`, `Ɔ`, `Ɲ`, `Ŋ`)
   * **Fulfuldé :** `ɓ`, `ɗ`, `ƴ`, `ɲ`, `ŋ` (+ majuscules `Ɓ`, `Ɗ`, `Ƴ`, `Ɲ`, `Ŋ`)
-* **Gestion Intelligente des Tons et de la Nasalisation (Post-Position) :**
+  * *Norme de l'Apostrophe :* Utilisation stricte de la consonne Unicode **`U+02BC`** (*Modifier Letter Apostrophe* `ʼ`) pour le saltillo/coup de glotte.
+* **Gestion Intelligente des Tons et de la Nasalisation (Automate FSM) :**
   * Support des diacritiques combinants Unicode (`U+0300` à `U+036F`) : Ton bas (`◌̀`), Ton haut (`◌́`), Circonflexe (`◌̂`) et Tilde nasal (`◌̃`).
-  * **Garde-fou linguistique intégré :** Empêche automatiquement l'insertion d'un diacritique orphelin (sur une consonne, un espace ou en début de texte) et limite la superposition à 2 diacritiques par voyelle (ex. voyelle nasalisée + ton : `ɛ̃́`).
+  * **Garde-fous linguistiques :** Interdiction stricte des diacritiques orphelins (sur consonnes, espaces ou en début de mot).
 * **Suppression par Cluster de Graphèmes (Smart Backspace) :**
-  * Un seul clic sur *Retour (Backspace)* efface la lettre complète ainsi que tous ses diacritiques combinants rattachés, sans laisser d'accents flottants.
-* **Double Mode de Saisie sur PC :**
-  * **Clavier Virtuel à l'écran** (clic souris / écran tactile).
-  * **Clavier Physique connecté** avec raccourcis rapides dédiés (`F1`–`F5` pour les lettres spéciales ANB, `F6`–`F9` pour les tons et la nasalisation).
-* **Exportation Universelle :** Bouton **Copier le texte** intégré pour coller instantanément vos messages dans WhatsApp, Microsoft Word, un navigateur web ou vos SMS.
+  * Effacement propre de la voyelle et de ses diacritiques associés sans laisser d'accents flottants.
+* **Ergonomie PC : Raccourcis Industriels `AltGr` :**
+  * `AltGr + Touche Latine` pour les lettres spéciales (`AltGr + E` -> `ɛ`, `AltGr + I` -> `ɩ`, `AltGr + U` -> `ʋ`, `AltGr + '` -> `ʼ`).
+  * `AltGr + 1..4` pour les tons et la nasalisation.
 
 ---
 
-## Architecture du Projet & Variantes (MATLAB / Rust / C++)
+## 📁 Organisation Propre du Dépôt
 
-Le dépôt est organisé en trois implémentations partageant exactement la même logique algorithmique :
-
-1. **`matlab_version/` (Approche Académique MATLAB & App Designer) :**
-   * Moteur algorithmique écrit en MATLAB pur avec structures statiques (`uint16`), transpilable en C/C++ natif via *MATLAB Coder*.
-   * Interface graphique complète sous *MATLAB App Designer* (`ClavierMultilingueApp.m`), compilable en installateur autonome (`setup.exe`)[cite: 1].
-2. **`rust_version/` (Alternative Native Ultra-Légère en Rust) :**
-   * Pour les utilisateurs ne disposant pas du *MATLAB Runtime (MCR)*, une implémentation native en Rust garantissant la sécurité mémoire et un exécutable de quelques mégaoctets.
-3. **`cpp_version/` (Moteur Natif C++17 & Pont Android JNI) :**
-   * Implémentation standard en C++17 portable, compilable directement en `.exe` sous Windows (MinGW/MSVC) ou intégrable dans Android Studio via le NDK (`native-lib.cpp`).
+```text
+Clavier_Multilingue_MATLAB_PC/
+│
+├── .gitignore                      <-- Règles d'exclusion Git officielles
+├── README.md                       <-- Présentation et documentation générale
+├── CONTRIBUTING.md                 <-- Guide de contribution open source
+├── sync_to_android_studio.ps1      <-- Script de déploiement automatique vers Android Studio
+│
+├── android_version/                <-- Sources Android v2.0 (Kotlin, layouts XML, drawables)
+│   ├── README_ANDROID.md           (Documentation technique mobile complète)
+│   └── app/                        (Module applicatif et service IME)
+│
+├── matlab_version/                 <-- Source unique MATLAB pour Desktop PC
+│   ├── ClavierMultilingueApp.m     (Interface graphique App Designer)
+│   ├── ClavierMultilingueApp.prj   (Configuration de packaging mcc)
+│   ├── splash_clean.png            (Splash screen 24bpp certifié Win32)
+│   ├── engine_*.m                  (Moteur algorithmique certifié %#codegen)
+│   └── generate_c_engine.m         (Automatisation MATLAB Coder)
+│
+├── cpp_version/                    <-- Moteur universel C ANSI transpilé
+│   ├── CMakeLists.txt              (Configuration NDK)
+│   ├── native-lib.cpp              (Pont JNI)
+│   └── engine_*.c / engine_*.h     (Sources C ANSI autonomes)
+│
+├── releases/                       <-- Binaire compilés prêts à l'emploi
+│   ├── ECLAVIER_ANB.exe            (Exécutable Windows PC)
+│   └── app-debug.apk               (Installable Android Mobile v2.0)
+│
+└── docs/                           <-- Documentation technique et académique
+    ├── architecture.md             (Spécifications de l'architecture 3-tiers)
+    ├── tech.md                     (Normes d'encodage, NDK et AGP 8)
+    ├── DEVELOPER_GUIDE.md          (Guide pas-à-pas de build & troubleshooting)
+    ├── cahier_de_charges.md        (Cahier des charges et spécifications)
+```
 
 ---
 
-## Raccourcis du Clavier Physique (Version PC)
+## 🛠️ Compilation & Déploiement
 
-Lorsque la fenêtre de l'application est active, vous pouvez taper directement sur votre clavier physique :
-
-| Touche Physique | Action dans E_CLAVIER |
-| :--- | :--- |
-| **`F1` à `F5`** | Insère la 1re à la 5e lettre spéciale de la langue active (ex. `ɛ`, `ɩ`, `ʋ`, `'` en Mooré) |
-| **`F6`** | Ajoute le **Ton Bas (`◌̀`)** sur la voyelle précédente (`U+0300`) |
-| **`F7`** | Ajoute le **Ton Haut (`◌́`)** sur la voyelle précédente (`U+0301`) |
-| **`F8`** | Ajoute l'**Accent Circonflexe (`◌̂`)** sur la voyelle précédente (`U+0302`) |
-| **`F9`** | Ajoute le **Tilde Nasal (`◌̃`)** sur la voyelle précédente (`U+0303`) |
-| **`Backspace`** | Supprime le dernier **cluster de graphèmes** complet (voyelle + diacritiques) |
-| **`Entrée` / `Espace`** | Insère un saut de ligne ou un espace |
-
+### 1. Installer directement les Binaires Précompilés
+Les binaires finaux générés sont disponibles dans le dossier [`releases/`](releases/) :
+- **Sur PC :** Lancer [`releases/ECLAVIER_ANB.exe`](releases/ECLAVIER_ANB.exe).
+- **Sur Smartphone Android :** lancer [`releases/ECLAVIER_ANB.apk`](releases/ECLAVIER_ANB.exe)
+### 2.suivre les instruction :
+* Sur PC: vous aurez besoin du logiciel` matlab runtime version 2023 ou +recentes`  il est assez lourds (environ 2go), bien sur il faudra etre connecte pour l'installation apres cela juste les  derniers setup et c'est tout bon . 
+* Sur mobile : nous sommes  aller plus loin , vous pouvez utiliser le clavier dans vos systemes de messageries ( whatsapp, messager,instagram,snap etc ) il faudra juste installer l'appli le setup est intuitif . 
 ---
 
-## Contribuer au Projet
+## 🤝 Contribuer au Projet
 
-Que vous soyez **développeur**, **linguiste** ou **locuteur natif**, vos remarques orthographiques et techniques constituent une contribution précieuse. Consultez le fichier **[CONTRIBUTING.md](./CONTRIBUTING.md)** pour participer.
+Que vous soyez **développeur**, **linguiste** ou **locuteur natif**, vos retours sont les bienvenus. Consultez **[CONTRIBUTING.md](./CONTRIBUTING.md)** pour proposer des améliorations ou reporter des bugs . 

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">E-Clavier</string>
+    <string name="ime_name">E-Clavier (ANB Multilingue)</string>
+
+    <!-- Navigation -->
+    <string name="tab_home">Accueil</string>
+    <string name="tab_settings">Paramètres</string>
+    <string name="tab_about">À Propos</string>
+
+    <!-- Écran Accueil / Onboarding -->
+    <string name="home_title">E-Clavier Multilingue</string>
+    <string name="home_subtitle">Clavier système pour les langues nationales du Burkina Faso (Mooré, Dioula, Fulfuldé) selon l\'ANB.</string>
+    <string name="step1_title">1. Activer le clavier</string>
+    <string name="step1_desc">Autoriser E-Clavier dans la liste des méthodes de saisie Android.</string>
+    <string name="step1_btn">Activer dans les paramètres</string>
+    <string name="step1_active">Clavier activé avec succès</string>
+    <string name="step2_title">2. Définir par défaut</string>
+    <string name="step2_desc">Sélectionner E-Clavier comme méthode de saisie active.</string>
+    <string name="step2_btn">Choisir le clavier par défaut</string>
+    <string name="step2_active">Clavier actif par défaut</string>
+    <string name="sandbox_title">Bac à sable interactif (Zone de Test)</string>
+    <string name="sandbox_hint">Touchez ici pour tester votre E-Clavier en direct...</string>
+    <string name="btn_clear">Effacer</string>
+    <string name="btn_copy">Copier le texte</string>
+    <string name="text_copied">Texte copié dans le presse-papiers !</string>
+
+    <!-- Écran Paramètres -->
+    <string name="settings_title">Paramètres de saisie</string>
+    <string name="settings_theme_group">Apparence &amp; Thème</string>
+    <string name="theme_auto">Automatique (Suit le mode sombre système)</string>
+    <string name="theme_light">Thème Clair (Touches vert pastel #D1EDD3)</string>
+    <string name="theme_dark">Thème Sombre (Touches vert sauge #5C7057)</string>
+    <string name="settings_feedback_group">Retours &amp; Accessibilité</string>
+    <string name="setting_haptic">Vibration à la frappe (Retour haptique)</string>
+    <string name="setting_sound">Son des touches</string>
+    <string name="setting_preview">Aperçu agrandi au toucher (Pop-up)</string>
+    <string name="settings_lang_group">Langue de démarrage par défaut</string>
+    <string name="lang_moore">Mooré (mòoré)</string>
+    <string name="lang_dioula">Dioula (julakan)</string>
+    <string name="lang_fulfulde">Fulfuldé (fulfulde)</string>
+
+    <!-- Écran À Propos & Contribution -->
+    <string name="about_title">Initiative Étudiante EPO</string>
+    <string name="about_subtitle">École Polytechnique de Ouagadougou</string>
+    <string name="about_institution_tag">Formation d\'Ingénieurs — Burkina Faso</string>
+    <string name="about_mission_title">Mission du Projet</string>
+    <string name="about_mission_text">E-Clavier est une initiative étudiante et citoyenne visant à démocratiser la rédaction numérique dans les langues nationales du Burkina Faso (Mooré, Dioula, Fulfuldé) dans le respect strict des normes orthographiques de l\'Alphabet National Burkinabè (ANB).\n\nDéveloppé et optimisé avec un moteur C certifié issu d\'une spécification algorithmique MATLAB Coder, ce projet est 100% open source et gratuit.</string>
+    <string name="about_links_title">Ressources &amp; Code Source</string>
+    <string name="btn_open_repo">Dépôt GitHub Officiel</string>
+    <string name="btn_open_contrib">Guide de Contribution</string>
+    <string name="about_support_title">Soutenir le Projet (Offrir un café)</string>
+    <string name="about_support_text">Ce logiciel est entièrement libre et gratuit. Vous pouvez soutenir l\'auteur étudiant pour financer le développement et les tests sur appareils réels.</string>
+    <string name="btn_coffee">Offrir un café (Copier le contact)</string>
+    <string name="coffee_copied">Contact Mobile Money copié : %s</string>
+
+    <!-- Clavier IME -->
+    <string name="space_label">Espace • ANB</string>
+    <string name="key_symbols">\?123</string>
+</resources>

@@ -19,11 +19,11 @@ L'implémentation actuelle s'appuie sur la documentation disponible de l'Alphabe
 
 ---
 
-## 2. Contributions Techniques (MATLAB, Rust, C++)
+## 2. Contributions Techniques (MATLAB, Flutter / Dart, C++)
 
-### Règles d'Architecture (Modèle MVC)
-1. **Dossier `matlab_version/` :** Les fichiers `init_clavier_state.m` et `engine_*.m` doivent obligatoirement conserver la directive `%#codegen` et n'utiliser que des types statiques (`uint16`, `uint8`, `logical`) compatibles avec **MATLAB Coder**[cite: 1].
-2. **Dossiers `rust_version/` et `cpp_version/` :** Toute modification des règles de validation des diacritiques (`U+0300`..`U+036F`) ou de la suppression par cluster doit être répercutée de manière identique dans les trois langages.
+### Règles d'Architecture
+1. **Dossier `matlab_version/` (Version Académique Actuelle) :** Les fichiers `init_clavier_state.m` et `engine_*.m` doivent obligatoirement conserver la directive `%#codegen` et n'utiliser que des types statiques (`uint16`, `uint8`, `logical`) compatibles avec **MATLAB Coder**.
+2. **Nouveau Moteur Système & Mobile (En cours) :** Toute implémentation du moteur linguistique sous Flutter (Dart) ou C++ doit strictement appliquer l'ordre canonique des diacritiques (Nasalisation avant Ton) et émettre l'apostrophe ANB `U+02BC`.
 
 ### Procédure de Pull Request (PR)
 1. Forkez le dépôt `https://github.com/FLICKWICK226/E_CLAVIER.git`.

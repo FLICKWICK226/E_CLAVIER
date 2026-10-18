@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/keyboard_root"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/keyboard_bg_light"
+    android:orientation="vertical"
+    android:paddingStart="3dp"
+    android:paddingTop="4dp"
+    android:paddingEnd="3dp"
+    android:paddingBottom="6dp">
+
+    <!-- 1. TOOLBAR SUPÉRIEURE DU CLAVIER -->
+    <LinearLayout
+        android:id="@+id/keyboard_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="38dp"
+        android:layout_marginBottom="4dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="4dp"
+        android:paddingEnd="4dp">
+
+        <!-- Badge Sélecteur de Langue -->
+        <TextView
+            android:id="@+id/tv_active_lang"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:background="@drawable/bg_badge_lang"
+            android:gravity="center"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:text="🇧🇫 MOORÉ ▾"
+            android:textColor="@color/brand_green_dark"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1" />
+
+        <!-- 4 Diacritiques de tons combinants rapides -->
+        <TextView
+            android:id="@+id/btn_tone_low"
+            android:layout_width="38dp"
+            android:layout_height="32dp"
+            android:layout_marginEnd="3dp"
+            android:background="@drawable/bg_key_tone_light"
+            android:gravity="center"
+            android:text="◌̀"
+            android:textColor="@color/text_primary_light"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/btn_tone_high"
+            android:layout_width="38dp"
+            android:layout_height="32dp"
+            android:layout_marginEnd="3dp"
+            android:background="@drawable/bg_key_tone_light"
+            android:gravity="center"
+            android:text="◌́"
+            android:textColor="@color/text_primary_light"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/btn_tone_circ"
+            android:layout_width="38dp"
+            android:layout_height="32dp"
+            android:layout_marginEnd="3dp"
+            android:background="@drawable/bg_key_tone_light"
+            android:gravity="center"
+            android:text="◌̂"
+            android:textColor="@color/text_primary_light"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/btn_tone_nasal"
+            android:layout_width="38dp"
+            android:layout_height="32dp"
+            android:background="@drawable/bg_key_tone_light"
+            android:gravity="center"
+            android:text="◌̃"
+            android:textColor="@color/text_primary_light"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <!-- 2. RANGÉE ANB : 5 TOUCHES SPÉCIFIQUES À LA LANGUE -->
+    <LinearLayout
+        android:id="@+id/row_anb"
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:layout_marginBottom="4dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/key_anb_1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="2dp"
+            android:layout_marginEnd="2dp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_key_anb_light"
+            android:gravity="center"
+            android:text="ɛ"
+            android:textColor="@color/text_primary_light"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/key_anb_2"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="2dp"
+            android:layout_marginEnd="2dp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_key_anb_light"
+            android:gravity="center"
+            android:text="ɩ"
+            android:textColor="@color/text_primary_light"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/key_anb_3"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="2dp"
+            android:layout_marginEnd="2dp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_key_anb_light"
+            android:gravity="center"
+            android:text="ʋ"
+            android:textColor="@color/text_primary_light"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/key_anb_4"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="2dp"
+            android:layout_marginEnd="2dp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_key_anb_light"
+            android:gravity="center"
+            android:text="ʼ"
+            android:textColor="@color/text_primary_light"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/key_anb_5"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="2dp"
+            android:layout_marginEnd="2dp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_key_anb_light"
+            android:gravity="center"
+            android:text="ŋ"
+            android:textColor="@color/text_primary_light"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <!-- 3. RANGÉE 1 AZERTY (A Z E R T Y U I O P) -->
+    <LinearLayout
+        android:id="@+id/row_1"
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
+        android:layout_marginBottom="4dp"
+        android:orientation="horizontal">
+
+        <!-- 10 Touches -->
+        <TextView android:id="@+id/key_a" style="@style/KeyStyle" android:text="a" />
+        <TextView android:id="@+id/key_z" style="@style/KeyStyle" android:text="z" />
+        <TextView android:id="@+id/key_e" style="@style/KeyStyle" android:text="e" />
+        <TextView android:id="@+id/key_r" style="@style/KeyStyle" android:text="r" />
+        <TextView android:id="@+id/key_t" style="@style/KeyStyle" android:text="t" />
+        <TextView android:id="@+id/key_y" style="@style/KeyStyle" android:text="y" />
+        <TextView android:id="@+id/key_u" style="@style/KeyStyle" android:text="u" />
+        <TextView android:id="@+id/key_i" style="@style/KeyStyle" android:text="i" />
+        <TextView android:id="@+id/key_o" style="@style/KeyStyle" android:text="o" />
+        <TextView android:id="@+id/key_p" style="@style/KeyStyle" android:text="p" />
+    </LinearLayout>
+
+    <!-- 4. RANGÉE 2 AZERTY (Q S D F G H J K L M) -->
+    <LinearLayout
+        android:id="@+id/row_2"
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
+        android:layout_marginBottom="4dp"
+        android:orientation="horizontal">
+
+        <!-- 10 Touches -->
+        <TextView android:id="@+id/key_q" style="@style/KeyStyle" android:text="q" />
+        <TextView android:id="@+id/key_s" style="@style/KeyStyle" android:text="s" />
+        <TextView android:id="@+id/key_d" style="@style/KeyStyle" android:text="d" />
+        <TextView android:id="@+id/key_f" style="@style/KeyStyle" android:text="f" />
+        <TextView android:id="@+id/key_g" style="@style/KeyStyle" android:text="g" />
+        <TextView android:id="@+id/key_h" style="@style/KeyStyle" android:text="h" />
+        <TextView android:id="@+id/key_j" style="@style/KeyStyle" android:text="j" />
+        <TextView android:id="@+id/key_k" style="@style/KeyStyle" android:text="k" />
+        <TextView android:id="@+id/key_l" style="@style/KeyStyle" android:text="l" />
+        <TextView android:id="@+id/key_m" style="@style/KeyStyle" android:text="m" />
+    </LinearLayout>
+
+    <!-- 5. RANGÉE 3 : SHIFT + W X C V B N + APOSTROPHE + BACKSPACE -->
+    <LinearLayout
+        android:id="@+id/row_3"
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
+        android:layout_marginBottom="4dp"
+        android:orientation="horizontal">
+
+        <!-- Shift (Largeur 1.4) -->
+        <ImageView
+            android:id="@+id/key_shift"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="2dp"
+            android:layout_marginEnd="2dp"
+            android:layout_weight="1.4"
+            android:background="@drawable/bg_key_action_light"
+            android:scaleType="centerInside"
+            android:src="@drawable/ic_shift" />
+
+        <TextView android:id="@+id/key_w" style="@style/KeyStyle" android:text="w" />
+        <TextView android:id="@+id/key_x" style="@style/KeyStyle" android:text="x" />
+        <TextView android:id="@+id/key_c" style="@style/KeyStyle" android:text="c" />
+        <TextView android:id="@+id/key_v" style="@style/KeyStyle" android:text="v" />
+        <TextView android:id="@+id/key_b" style="@style/KeyStyle" android:text="b" />
+        <TextView android:id="@+id/key_n" style="@style/KeyStyle" android:text="n" />
+
+        <!-- Coup de glotte ANB (U+02BC) -->
+        <TextView
+            android:id="@+id/key_apostrophe"
+            style="@style/KeyStyle"
+            android:text="ʼ"
+            android:textStyle="bold" />
+
+        <!-- Backspace (Largeur 1.4) -->
+        <ImageView
+            android:id="@+id/key_backspace"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="2dp"
+            android:layout_marginEnd="2dp"
+            android:layout_weight="1.4"
+            android:background="@drawable/bg_key_action_light"
+            android:scaleType="centerInside"
+            android:src="@drawable/ic_backspace" />
+    </LinearLayout>
+
+    <!-- 6. RANGÉE 4 : SYMBOLS + GLOBE + ESPACE ANB + POINT + ENTRÉE -->
+    <LinearLayout
+        android:id="@+id/row_4"
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
+        android:orientation="horizontal">
+
+        <!-- Symboles ?123 -->
+        <TextView
+            android:id="@+id/key_symbols"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="2dp"
+            android:layout_marginEnd="2dp"
+            android:layout_weight="1.3"
+            android:background="@drawable/bg_key_action_light"
+            android:gravity="center"
+            android:text="@string/key_symbols"
+            android:textColor="@color/text_primary_light"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <!-- Globe (Changement de langue) -->
+        <ImageView
+            android:id="@+id/key_globe"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="2dp"
+            android:layout_marginEnd="2dp"
+            android:layout_weight="1.1"
+            android:background="@drawable/bg_key_action_light"
+            android:scaleType="centerInside"
+            android:src="@drawable/ic_language" />
+
+        <!-- Espace ANB (Largeur 4.5) -->
+        <TextView
+            android:id="@+id/key_space"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="2dp"
+            android:layout_marginEnd="2dp"
+            android:layout_weight="4.5"
+            android:background="@drawable/bg_key_light"
+            android:gravity="center"
+            android:text="@string/space_label"
+            android:textColor="@color/text_secondary_light"
+            android:textSize="13sp" />
+
+        <!-- Point . -->
+        <TextView
+            android:id="@+id/key_dot"
+            style="@style/KeyStyle"
+            android:text="."
+            android:textStyle="bold" />
+
+        <!-- Entrée -->
+        <TextView
+            android:id="@+id/key_enter"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="2dp"
+            android:layout_marginEnd="2dp"
+            android:layout_weight="1.6"
+            android:background="@drawable/bg_key_action_light"
+            android:gravity="center"
+            android:text="↵"
+            android:textColor="@color/brand_green_dark"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+</LinearLayout>
